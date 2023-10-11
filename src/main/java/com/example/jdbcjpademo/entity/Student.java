@@ -1,5 +1,6 @@
 package com.example.jdbcjpademo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,7 +20,6 @@ import lombok.NoArgsConstructor;
         )
 )
 public class Student {
-
     @Id
     @SequenceGenerator(
             name = "student_sequence",
@@ -42,6 +42,7 @@ public class Student {
 
     @ManyToOne
     @JoinColumn(name = "teacher_id")
+    @JsonIgnore
     private Teacher teacher;
 
     @Override

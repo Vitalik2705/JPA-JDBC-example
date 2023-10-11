@@ -23,25 +23,26 @@ class JdbcJpaDemoApplicationTests {
 	@Test
 	public void saveStudent() {
 		Teacher teacher = Teacher.builder()
-				.email("sergiiyaroshko@gmail.com")
-				.firstName("Serhii")
-				.lastName("Yaroshko")
+				.email("yharasym@gmail.com")
+				.firstName("Yaroslav")
+				.lastName("Harasym")
 				.build();
 
 		teacherRepository.save(teacher);
 
+//		Student student = Student.builder()
+//				.email("vitalik@gmail.com")
+//				.firstName("Vitalik")
+//				.lastName("Yatskiv")
+//				.teacher(teacher)
+//				.build();
+
 		Student student = Student.builder()
-				.email("vitalik@gmail.com")
+				.email("vitalik1@gmail.com")
 				.firstName("Vitalik")
-				.lastName("Yatskiv")
+				.lastName(null)
 				.teacher(teacher)
 				.build();
-
-//		Student student = Student.builder()
-//				.email("vitalik1@gmail.com")
-//				.firstName("Vitalik")
-//				.lastName(null)
-//				.build();
 
 		studentRepository.save(student);
 	}
